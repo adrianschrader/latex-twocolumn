@@ -1,8 +1,8 @@
 #!/bin/bash
 # Run this script from the document root
-sh script/cleanAll.sh
-sh script/build.sh
-sh script/clean.sh
+sh scr/cleanAll.sh
+sh scr/build.sh
+sh scr/clean.sh
 
 git add .
 git status
