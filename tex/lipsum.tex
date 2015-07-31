@@ -1,4 +1,4 @@
-% TITLE: Lipsum text with two figures
+% TITLE: Lipsum text with two figures and math
 % AUTHOR: Adrian Schrader
 % Created on: 31/7/15
 
@@ -7,9 +7,9 @@
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=\linewidth]{img/example}
-  \caption{Random cat picture from Google \protect\url{https://static.pexels.com/photos/6151/animal-cute-fur-white.jpg}}
-  \label{img:cat1}
+  \includegraphics[width=\linewidth]{img/plot}
+  \caption{Plot of of f(t) in maple}
+  \label{img:function}
 \end{figure}
 
 \lipsum[3-4]
@@ -25,10 +25,23 @@
 \end{figure*}
 
 \subsection{Subsection One.Two}
-\lipsum[6-7]
+\lipsum[6]
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\linewidth]{img/spectrum}
+  \caption{Plot of the spectrum of f(t) in maple}
+  \label{img:spectrum}
+\end{figure}
+
+\begin{align}
+    f(t) &= s_0 \cdot e^{-\frac{t}{\tau}} \cdot cos(\omega_s t) \cdot \Theta(t) \nonumber \\
+    &= s_0 \cdot e^{-\frac{t}{\tau}} \cdot \frac{1}{2} \Big( e^{i \omega_s t} + e^{-i \omega_s t} \Big) \cdot \Theta(t)\\
+    \tilde{f}(\omega) &= \mathcal{F}(f)(\omega) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} f(t) \cdot e^{-i \omega t} dt \nonumber\\
+    &= \frac{s_0}{\sqrt{2\pi}} \frac{\frac{1}{\tau} + i \omega}{(\frac{1}{\tau} + i \omega)^2 + \omega_s^2}
+\end{align}
 
 \section{Section Two}
 \lipsum[9-12]
 
 \subsection{Subsection Two.One}
-\lipsum[13-15]
+\lipsum[13-14]
