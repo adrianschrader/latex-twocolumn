@@ -2,8 +2,8 @@
 % AUTHOR: Adrian Schrader
 % Created on: 31/7/15
 
-\section{Section One}
-\lipsum[1-2]
+\section{Normal figures}
+\lipsum[1-2]\footnote{This is an unnecessary footnote. Thanks!}
 
 \begin{figure}[h]
   \centering
@@ -14,7 +14,7 @@
 
 \lipsum[3-4]
 
-\subsection{Subsection One.One}
+\subsection{Page wide figures}
 \lipsum[5]
 
 \begin{figure*}[ht]
@@ -24,7 +24,7 @@
   \label{img:cat2}
 \end{figure*}
 
-\subsection{Subsection One.Two}
+\subsection{Formulas and plots}
 \lipsum[6]
 \begin{figure}[h]
   \centering
@@ -40,7 +40,17 @@
     &= \frac{s_0}{\sqrt{2\pi}} \frac{\frac{1}{\tau} + i \omega}{(\frac{1}{\tau} + i \omega)^2 + \omega_s^2}
 \end{align}
 
-\section{Section Two}
+\section{Source codes}
+\begin{listing}
+  \begin{minted}{java}
+    public static void main(String[] args) {
+      return;
+    }
+  \end{minted}
+  \caption{Standard main method of every java program}
+  \label{lst:javamain}
+\end{listing}
+
 \lipsum[9-12]
 
 \subsection{Subsection Two.One}

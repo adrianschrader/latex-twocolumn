@@ -23,9 +23,9 @@
 %\usepackage{lmodern}
 %\usepackage{kpfonts}
 %\usepackage{ccfonts}
-%\usepackage{cmbright}
+\usepackage{cmbright}
 %\usepackage{antpolt}
-\usepackage{iwona}
+%\usepackage{iwona}
 
 % Bibliography
 \usepackage[numbers,round]{natbib}
@@ -38,6 +38,20 @@
 \usepackage[left=2.5cm, right=2.5cm, top=2.5cm, bottom=3cm]{geometry}
 \setlength{\columnsep}{15pt}
 
+% Source Code
+\usepackage{caption}
+\usepackage[section]{minted}
+\usemintedstyle{trac}
+\setminted[java]{
+  autogobble,
+  mathescape,
+  fontfamily=courier,
+  breaklines,
+  fontsize=\footnotesize,
+  framesep=2mm,
+  baselinestretch=1.2}
+\renewcommand{\listingscaption}{Quellcode}
+
 % Document Information
 \title{A long and complex document title}
 \subtitle{Further specification goes here}
@@ -47,16 +61,14 @@
 \begin{document}
   % Create Title, Abstract and TOC
   \twocolumn[\maketitle \begin{abstract} \begin{minipage}{1.0\linewidth}
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.
-
-  \vspace{0.8cm}
-  \end{minipage}\end{abstract}]
+    \input{tex/abstract}
+  \vspace{0.8cm} \end{minipage}\end{abstract}]
   \tableofcontents
 
   % CONTENT
   \input{tex/lipsum}
-  \cite{book:handbook}
-  % Input your source files here
+
+  \lipsum[2]~\cite{book:handbook}
 
   % Bibliography
   \bibliography{bib/bibliography.bib}
